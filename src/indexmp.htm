@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
 <TITLE>寿星天文历</TITLE>
 <META content="寿星天文历;万年历;农历;农历计算;算法;天文算法;伊斯兰历;回历;节气;交节时刻"  name=keywords>
@@ -6,16 +7,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
- td,p {font-family:宋体; font-size:12px; line-height:150%}
+ td,p {font-family:宋体,serif; font-size:12px; line-height:150%}
  .bd0   {border: 0px}
- .bd1   {border: 1px solid #888888}
+ .bd1   {border: 1px solid #888888;padding: 10px}
  .bd2   {border: 2px solid #000000}
  .dTop  {border-top:    1px solid #000000; font-size:12px}
  .dBot  {border-bottom: 1px solid #000000; font-size:12px}
  .dRig  {border-right:  1px solid #888888; font-size:12px}
  .dLef  {border-left:   1px solid #888888; font-size:12px}
- .dRB   {border-right: 1 solid #000000;border-bottom: 1 solid #000000; font-size:12px}
- .dRT   {border-right: 1 solid #000000;border-top:    1 solid #000000; font-size:12px}
+ .dRB   {border-right: 1px solid #000000;border-bottom: 1px solid #000000; font-size:12px}
+ .dRT   {border-right: 1px solid #000000;border-top:    1px solid #000000; font-size:12px}
  .dBot2 {border-bottom: 1px solid #C0C0C0; font-size:12px}
  .dTop2 {border-top:    1px solid #C0C0C0; font-size:12px}
 
@@ -42,7 +43,7 @@
   </td></tr>
 
   <tr><td width="100%" bgcolor="#E0E0FF">
-  <!--软件版本--><span style='font-family:楷体_GB2312;font-size:16px;color:#FF0000;font-weight:bold'>寿星</span><span style='font-size:12px;font-weight:bold'><i>天文历(V5.09)</i></span>
+  <!--软件版本--><span style='font-family:楷体_GB2312,serif;font-size:16px;color:#FF0000;font-weight:bold'>寿星</span><span style='font-size:12px;font-weight:bold'><i>天文历(V5.10)</i></span>
   <!--经纬选择--><select id=Sel1 onchange="change(0)" style="width:80px"></select> <select id=Sel2 onchange="change2()"></select>
   <!--经度纬度--><span id=Cal_zdzb></span>
   </td></tr>
@@ -104,12 +105,12 @@
 
 <!--日月食图表-->
 <tr id=page3 style="display:none">
- <td width=270 valign=top style='line-height: 150%' class=dRig>
+ <td width="35%" valign=top style='line-height: 150%' class=dRig>
   <div align=center>暂停<input id=Cal_pause type=checkbox checked></div><br>
   <div id=Cal_zb></div>
  </td>
 
- <td width=500 valign=top>
+ <td width="65%" valign=top>
 <table width="100%" cellspacing=0 cellpadding=0>
  <tr><td>
  经度<input id=Cb_J type=text size=11 value=0>纬度<input id=Cb_W type=text size=9 value=0>海拔<input id=Cb_high type=text size=2 value=0>km
@@ -157,7 +158,7 @@
 </textarea><br>
  <textarea cols=107 rows=15 id=Cc_tb></textarea><br>
  P1指两圆相初亏切点的方位，从日面北点起算(赤道坐标系中,日面顶点)，向东测量。日面在我们的视觉平面上，按上北下南左东右西确定方向。P2指复圆方位角。V1,V2也是切点方位，起算点从地平坐标中的日面顶点开始。
- 食分中的*号表示日没时分，食甚发生在日没后；#号表示日出食分，食甚发生在日出前。
+ 食分中的*号表示日没食分，食甚发生在日没后；#号表示日出食分，食甚发生在日出前。
 </td></tr>
 
 <!--行星星历表-->
@@ -227,7 +228,7 @@ UTC/TD<input id=Cf_ut type=checkbox checked><br>
 个数<input id=Cf_n type=text size=4 value=10>
 <input type=button value="确定" onclick="aCalc()">
 <a href="javascript:showHelp(6)">帮助</a><br>
-<textarea cols=75 rows=15 id=Cf_db style="font-family:宋体;font-size: 12px" wrap=off></textarea><br>
+<textarea cols=75 rows=15 id=Cf_db style="font-family:宋体,serif;font-size: 12px" wrap=off></textarea><br>
 <textarea cols=75 rows=15 id=Cf_xl style="font-size: 12px"></textarea><br>
 </td></tr>
 
@@ -260,7 +261,7 @@ UTC/TD<input id=Cf_ut type=checkbox checked><br>
  <input type=button value="搜索" onclick="tuGL_search(0)">
  <input type=button value="精搜索" onclick="tuGL_search(1)">
  <div id=Cp10_b1></div>
- <font color=red><b>选定的时间为：</b></font><span id=Cp10_jdstr>2008-08-01 10:14:30</span>TD
+ <font color=red><b>选定时间:</b></font><span id=Cp10_jdstr>2008-08-01 10:14:30</span>TD
  <b>JDE</b>=<input id=Cp10_jd type=text size=14 value=2454679.926741><br>
 
  步长(可负)<input type=text id=Cp10_step size=7 value=6585.32>天
@@ -283,7 +284,7 @@ UTC/TD<input id=Cf_ut type=checkbox checked><br>
  </td></tr>
  <tr><td id=Cp10_tz></td></tr>
  <tr><td align=center><canvas id="Can2" width="480" height="420"></canvas></td></tr>
- <tr><td>
+ <tr><td id=Can3_pan>
  平面中心:经<input type=textbox id=Cp10_J0 value="0" size=5>纬<input type=textbox id=Cp10_W0 value="0" size=5>
  球半径<input type=textbox id=Cp10_eR value="250" size=5>
  <select id=Cp10_tylx>
@@ -421,6 +422,8 @@ UTC/TD<input id=Cf_ut type=checkbox checked><br>
  <tr><td align=center>
  ［<a href="javascript:dingQi_v();">定气速度测试</a> <a href="javascript:dingSuo_v();">定朔速度测试</a>］
  ［<a href='javascript:K_show(1)'>气朔计算</a> <a href='javascript:K_show(0)'>清空</a>］
+ ［<a href='sxwnl.htm'>桌面版</a> <a href='https://qaiu.top' target="_blank">QAIU 首页</a> <a
+         href='http://bbs.nongli.net/' target="_blank">农历论坛</a>］
  </td></tr>
  <tr><td>
   <div id=pan_1 style='display:none'>
@@ -669,7 +672,7 @@ function tu_calc(ly){ //ly是取时间的方式,xm是计算的项目
        +' <a href="javascript:zxsCopy('+zxsJ+','+zxsW+')">此地</a>';
   }
 
-  s = '日月站心视半径 '+m2fm(sr,2,0)+'及'+m2fm(mr,2,0)+' <font color=red>'+s2+'</font><br>'
+  s = '日月测站视半径 '+m2fm(sr,2,0)+'及'+m2fm(mr,2,0)+' <font color=red>'+s2+'</font><br>'
     + '日月中心视距 '+m2fm( d1,2,0 ) +' 日月半径和 '+m2fm(d0,2,0) + ' 半径差 ' + m2fm(sr-mr,2,0) +' 距外切 '+m2fm(d1-d0,2,0);
   Cb_zb.innerHTML = s;
 
@@ -831,7 +834,8 @@ function tu2_calc(fs,jd0){
   }else{
     Can2.style.display='block';
     Can3.style.display='none';
-    tu2.line1(r,Cp10_hc.checked);
+    Can3_pan.style.display = 'none';
+    tu2.line1([r], Cp10_hc.checked);
   }
   return;
  }
@@ -840,6 +844,7 @@ function tu2_calc(fs,jd0){
  if(fs==5){
   Can2.style.display='block';
   Can3.style.display='none';
+  Can3_pan.style.display = 'none';
   var i,r,rr=[], bn = Cp10_bn.value-0; //并设置为多步
   var s = '<table border="0" width="100%" cellpadding="0" cellspacing="0">'
         + '<tr align=center bgcolor="#EEFFEE"><td>力学时</td><td>γ</td><td>型</td><td>中心地标</td><td>方位角</td><td>食分</td><td>食带</td><td>食延</td><td>详表</td></tr>';
@@ -1035,7 +1040,7 @@ function showPage(pg){
   page11.style.display='none';
   page12.style.display='none';
   page13.style.display='none';
-  if(pg==1) page1.style.display='block';
+  if(pg==1) page1.style.display='table-cell;';
   if(pg==2){page2.style.display='block'; getNianLi(0);} //年历
   if(pg==3){page3.style.display='block'; tu_calc(2);} //图表
   if(pg==4) page4.style.display='block'; //地方日食
@@ -1253,8 +1258,8 @@ function showMessD(n){ //显时本月第n日的摘要信息。调用前应先执
   if(ob.C)    s += ob.C;
   Cal_pan.style.display = 'block'; //先显示再传值屏幕流畅
   Cal_pan_in.innerHTML = s;
-  Cal_pan.style.left = window.event.x+document.body.scrollLeft + ( (ob.week>3) ? -180 : 20 );
-  Cal_pan.style.top  = window.event.y+document.body.scrollTop  - ( (ob.weeki<2)?    0 :100 );
+  Cal_pan.style.left = window.event.x+document.body.scrollLeft + ( (ob.week>3) ? -180 : 20 )+'px';
+  Cal_pan.style.top  = window.event.y+document.body.scrollTop  - ( (ob.weeki<2)?    0 :100 )+'px';
  }
 }
 
@@ -1285,8 +1290,8 @@ function getNianLi(dy){ //dy起始年份偏移数
  y=year2Ayear(Cp2_y.value);  if(y==-10000) return;         //检查输入值
  y+=dy;                      Cp2_y.value = Ayear2year(y); //加上偏移年数
  if(y<-10000) { alert('到底了'); return; } //检查输入值
- if(Cp2_tg.checked) Cal7.innerHTML = Ayear2year(y)+'年<br>'+nianLiHTML(y);
- else               Cal7.innerHTML = Ayear2year(y)+'年<br>'+nianLi2HTML(y);
+ if(Cp2_tg.checked) Cal7.innerHTML = Ayear2year(y)+'年<br>'+nianLiHTML(y, '');
+ else               Cal7.innerHTML = Ayear2year(y)+'年<br>'+nianLi2HTML(y, '');
 }
 function getNianLiN(){ //dy起始年份偏移数
  y=year2Ayear(Cp2_y.value);
@@ -1295,7 +1300,7 @@ function getNianLiN(){ //dy起始年份偏移数
  if(n<1||n>500) {alert("超出范围"); return;}
  var i,s='';
  for(i=0;i<n;i++){
-  if(Cp2_tg.checked) s += Ayear2year(y+i)+'年<br>'+nianLiHTML(y+i);
+  if(Cp2_tg.checked) s += Ayear2year(y+i)+'年<br>'+nianLiHTML(y+i, '');
   else               s += Ayear2year(y+i)+'年<br>'+nianLi2HTML(y+i);
  }
  Cal7.innerHTML = s;

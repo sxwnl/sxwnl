@@ -878,8 +878,8 @@ function Lunar(){
 
  //html月历生成,结果返回在lun中,curJD为当前日期(用于设置今日标识)
  this.yueLiHTML=function(By,Bm,curJD){
-  var sty_head =' style="font-family: 宋体; font-size: 14px; text-align: center; background-color: #E0E0FF; color: #000000; font-weight: bold" ';
-  var sty_body =' style="font-family: 宋体; font-size: 12px; text-align: center " ';
+  var sty_head =' style="font-family: 宋体,serif; font-size: 14px; text-align: center; background-color: #E0E0FF; color: #000000; font-weight: bold" ';
+  var sty_body =' style="font-family: 宋体,serif; font-size: 12px; text-align: center " ';
   var sty_date =' style="font-family: Arial Black; text-align: center;font-size: 20px" ';
   var sty_date2=' style="font-family: Arial Black; text-align: center;font-size: 20px; color: #FF0000" ';
   var sty_cur  =' style="background-color:#90D050" ';
@@ -957,7 +957,7 @@ function Lunar(){
 *********************/
 
 
-function nianLiHTML(y){ //html年历生成
+function nianLiHTML(y, fg){ //html年历生成
  var i,j,s='', s1,s2,v,qi;
  SSQ.calcY( int2((y-2000)*365.2422+180) );
  for(i=0;i<14;i++){
@@ -971,7 +971,7 @@ function nianLiHTML(y){ //html年历生成
   s2 = '('+ JD.JD2str(v+J2000).substr(9,11)+')';
   if(int2(v+0.5)!=SSQ.HS[i]) s2 = '<font color=red>'+s2+'</font>';
   //v=(v+0.5+J2000)%1; if(v>0.5) v=1-v; if(v<8/1440) s2 = '<u>'+s2+'</u>'; //对靠近0点的加注
-  s1 += s2;
+  s1 += s2 + fg;
 
   for(j=-2;j<24;j++){
     if(j>=0)  qi=SSQ.ZQ[j];
@@ -979,13 +979,13 @@ function nianLiHTML(y){ //html年历生成
     if(j==-2) qi=SSQ.ZQ.pe2;
 
     if(qi<SSQ.HS[i] || qi>=SSQ.HS[i+1]) continue;
-    s1 += ' '+obb.jqmc[(j+24)%24]+JD.JD2str(qi+J2000).substr(6,5);
+    s1 += '&nbsp;&nbsp;&nbsp;&nbsp;' + obb.jqmc[(j + 24) % 24] + ' ' + JD.JD2str(qi + J2000).substr(6, 5);
 
     v = obb.qi_accurate2(qi);
     s2 = '('+ JD.JD2str(v+J2000).substr(9,11)+')';
     if(int2(v+0.5)!=qi) s2 = '<font color=red>'+s2+'</font>';
     //v=(v+0.5+J2000)%1; if(v>0.5) v=1-v; if(v<8/1440) s2 = '<u>'+s2+'</u>'; //对靠近0点的加注
-    s1 += s2;
+    s1 += s2 + fg;
   }
   s += s1 + '<br>';
  }

@@ -233,11 +233,12 @@ var tu3={
  draw:function(F, J0,W0, eR, jb, tylx){ //jb局部放大参数
   var col1 = '#FF6060', col2 = '#80F080', n;
   touY.setlx(tylx,J0,W0, jb);
+  this.x0 = eR * 2.2 / 2;
+  this.y0 = eR * 2.2 / 2;
+  this.can.width = eR * 2.2;
+  this.can.height = eR * 2.2;
+  eR /= jb[2];
   this.eR = eR;
-  this.x0 = this.w*eR/250/2;
-  this.y0 = this.h*eR/250/2;
-  this.can.width  = this.w*eR/250; //重置画布大小,清除画布
-  this.can.height = this.h*eR/250;
 
 
   this.lineArr(ditu1,'#808080'); //地图shape

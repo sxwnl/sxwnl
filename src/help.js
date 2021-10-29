@@ -43,6 +43,7 @@ function showHelp(f){
     +'　4、忽略短周期章动指不计算周期小于35天的章动项，以便与中国天文年历比对。<br>'
     +'  5、星座资料包括：汉语、缩写、面积(平方度)、中心赤经 (时分)、中心赤纬(度分)、象限角、族、星座英文名';
  }
- help.style.display='block';
- help.innerHTML = '<a href="javascript:showHelp(0)">关闭</a><br>'+s;
+ help.style.display='revert';
+ help.innerHTML = '<a href="javascript:showHelp(0)">关闭</a><a href="src/readme.htm" style="margin-left:' +
+   ' 40px">更多>></a><br>'+s;
 }

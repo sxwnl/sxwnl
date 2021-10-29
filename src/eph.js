@@ -1355,11 +1355,28 @@ var rsPL={ //日食批量快速计算器
    jd += dt2; //极值时间
   }
 
+  //求直线到太阳中心的最小值
+  var maxsf = 0, maxjd = jd, rmin, ls;
+  for (i = -30; i < 30; i += 6) {
+   tt = jd + i / 86400;
+   this.secXY(tt, L, fa, high, g);
+   ls = (g.mr + g.sr - Math.sqrt(g.x * g.x + g.y * g.y)) / g.sr / 2;
+   if (ls > maxsf) maxsf = ls, maxjd = tt;
+  }
+  jd = maxjd;
+  for (i = -5; i < 5; i += 1) {
+   tt = jd + i / 86400;
+   this.secXY(tt, L, fa, high, g);
+   ls = (g.mr + g.sr - Math.sqrt(g.x * g.x + g.y * g.y)) / g.sr / 2;
+   if (ls > maxsf) maxsf = ls, maxjd = tt;
+  }
+  jd = maxjd;
+  this.secXY(jd, L, fa, high, G);
+  rmin = Math.sqrt(G.x * G.x + G.y * G.y);
+
   this.sun_s = sunShengJ(jd-dt_T(jd)+L/pi2,L,fa,-1) +dt_T(jd); //日出,统一用力学时
   this.sun_j = sunShengJ(jd-dt_T(jd)+L/pi2,L,fa, 1) +dt_T(jd); //日没,统一用力学时
 
-  //求直线到太阳中心的最小值
-  var x=G.x+dt2*v, y=G.y+dt2*u, rmin=Math.sqrt(x*x+y*y);
 
   if(rmin<=G.mr+G.sr){ //食计算
    this.sT[1] = jd; //食甚
