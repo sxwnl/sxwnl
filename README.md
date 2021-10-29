@@ -4,7 +4,7 @@
 本页面预览地址: https://qaiu.github.io/sxwnl  
 因为原项目使用GBK编码导致在GitHub Page上预览乱码, 故项目编码统一改为UTF-8  
 
-说明文档: https://qaiu.github.io/sxwnl/readme.htm  
+说明文档: https://qaiu.github.io/sxwnl/src/readme.htm  
   
 关于版权: https://qaiu.github.io/sxwnl/src/sm1.htm#copyright  
   
