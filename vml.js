@@ -1,6 +1,6 @@
 
-//====================ÈÕÊ³×÷Í¼Îï¼ş=====================
-function ht_init(can){ //»æÍ¼Îï¼ş³õÊ¼»¯
+//====================æ—¥é£Ÿä½œå›¾ç‰©ä»¶=====================
+function ht_init(can){ //ç»˜å›¾ç‰©ä»¶åˆå§‹åŒ–
   if(this.isInit) return;
   this.isInit = 1;
   this.can = can; //document.getElementById("can");
@@ -10,21 +10,21 @@ function ht_init(can){ //»æÍ¼Îï¼ş³õÊ¼»¯
   this.w = can.width-0;
   this.h = can.height-0;
 }
-function ht_oval1(ctx,x,y,r,col){ //»­¿ÕĞÄÔ²
+function ht_oval1(ctx,x,y,r,col){ //ç”»ç©ºå¿ƒåœ†
  ctx.beginPath();
  ctx.arc(x,y,r,0,2*Math.PI);
  ctx.strokeStyle = col;
  ctx.closePath();
  ctx.stroke();
 }
-function ht_oval2(ctx,x,y,r,col){ //»­ÊµĞÄÔ²
+function ht_oval2(ctx,x,y,r,col){ //ç”»å®å¿ƒåœ†
  ctx.beginPath();
  ctx.arc(x,y,r, 0,2*Math.PI);
  ctx.fillStyle = col;
  ctx.closePath();
  ctx.fill();
 }
-function ht_line(ctx,x1,y1,x2,y2,col){ //»­Ïß
+function ht_line(ctx,x1,y1,x2,y2,col){ //ç”»çº¿
   ctx.beginPath();
   ctx.strokeStyle=col;
   ctx.moveTo(x1,y1);
@@ -32,28 +32,28 @@ function ht_line(ctx,x1,y1,x2,y2,col){ //»­Ïß
   ctx.stroke();
   ctx.closePath();
 }
-function ht_text(ctx,x,y,txt,col,font){ //»æÎÄ±¾
-  ctx.font = font; //Àı'bold 35px Arial'
+function ht_text(ctx,x,y,txt,col,font){ //ç»˜æ–‡æœ¬
+  ctx.font = font; //ä¾‹'bold 35px Arial'
   //ctx.textAlign = 'center';
-  ctx.textBaseline = 'top'; //top bottomµÈ
+  ctx.textBaseline = 'top'; //top bottomç­‰
   ctx.fillStyle = col;
-  ctx.fillText(txt, x, y); //Ö»Ãè±ßÔòÓÃ ctx.strokeText(txt, x, y)
+  ctx.fillText(txt, x, y); //åªæè¾¹åˆ™ç”¨ ctx.strokeText(txt, x, y)
 }
 
 var tu1={
- isInit:0, x0:0, y0:0, w:0, h:0, dx:0, dy:0, //×ø±ê²ÎÊı
- diming:new Array(116.4,40,'±±¾©',119,25.4,'ÆÎÌï',91,29.7,'À­Èø',-73,41,'Å¦Ô¼',151,-34,'Ï¤Äá',37,56,'ÄªË¹¿Æ',30,-20,'·ÇÖŞÄÏ²¿',-56,-33,'ÎÚÀ­¹ç'), //¼¸¸öµØ±ê
- rsph:[], //ÈÕÊ³Â·¾¶
- init:ht_init, //³õÊ¼»¯
- showzb:function(){ //ÏÔÊ¾×ø±êµÈ
-  //×ø±ê²ÎÊı
+ isInit:0, x0:0, y0:0, w:0, h:0, dx:0, dy:0, //åæ ‡å‚æ•°
+ diming:new Array(116.4,40,'åŒ—äº¬',119,25.4,'è†ç”°',91,29.7,'æ‹‰è¨',-73,41,'çº½çº¦',151,-34,'æ‚‰å°¼',37,56,'è«æ–¯ç§‘',30,-20,'éæ´²å—éƒ¨',-56,-33,'ä¹Œæ‹‰åœ­'), //å‡ ä¸ªåœ°æ ‡
+ rsph:[], //æ—¥é£Ÿè·¯å¾„
+ init:ht_init, //åˆå§‹åŒ–
+ showzb:function(){ //æ˜¾ç¤ºåæ ‡ç­‰
+  //åæ ‡å‚æ•°
   var i,c,x,y;
   var dx = this.dx = int2( this.w/8.5 );
   var dy = this.dy = int2( this.h/8.0 );
   var x0 = this.x0 = int2( (this.w - dx*8)/2 );
   var y0 = this.y0 = int2( dy*6)+3;
-  this.vs=dx,  this.vx=x0+4*dx,  this.vy=y0-3*dy; //vs¶ÔÓ¦32½Ç·Ö(·Å´óÇø²ÎÊı)
-  //»­µØÍ¼
+  this.vs=dx,  this.vx=x0+4*dx,  this.vy=y0-3*dy; //vså¯¹åº”32è§’åˆ†(æ”¾å¤§åŒºå‚æ•°)
+  //ç”»åœ°å›¾
   this.can.height = this.can.height;
   this.ctx.beginPath();
   this.ctx.fillStyle = '#D0D0D0';
@@ -66,36 +66,36 @@ var tu1={
     else  this.ctx.lineTo(x,y);
   }
   this.ctx.fill();
-  //´´½¨×ø±ê
+  //åˆ›å»ºåæ ‡
   this.ctx.beginPath();
   this.ctx.strokeStyle="#00FF00";
 
-  for(i=0;i<=6;i++){ //»­Ë®Æ½Íø¸ñÏß(y¿Ì¶È)
-   c = y0 - i*dy +0.5; //¼Ó0.5Ê¹Ïß±äÏ¸
+  for(i=0;i<=6;i++){ //ç”»æ°´å¹³ç½‘æ ¼çº¿(yåˆ»åº¦)
+   c = y0 - i*dy +0.5; //åŠ 0.5ä½¿çº¿å˜ç»†
    this.ctx.moveTo(x0, c);
    this.ctx.lineTo(x0+dx*8, c);
-   if(i) ht_text(this.ctx, x0+2,c, 15*i+'('+(i>3?'+':'')+30*(i-3)+')', '#000000', '12px ËÎÌå');
+   if(i) ht_text(this.ctx, x0+2,c, 15*i+'('+(i>3?'+':'')+30*(i-3)+')', '#000000', '12px å®‹ä½“');
   }
-  for(i=0;i<=8;i++){ //»­ÊúÖ±Íø¸ñÏß(x¿Ì¶È)
-   c = x0 + i*dx + 0.5; //¼Ó0.5Ê¹Ïß±äÏ¸
+  for(i=0;i<=8;i++){ //ç”»ç«–ç›´ç½‘æ ¼çº¿(xåˆ»åº¦)
+   c = x0 + i*dx + 0.5; //åŠ 0.5ä½¿çº¿å˜ç»†
    this.ctx.moveTo(c, y0);
    this.ctx.lineTo(c, y0-dy*6);
-   if(i>0&&i<8) ht_text(this.ctx, c-10,y0, 30*(i-4)+'('+(i<=4?45*i:45*i-360)+')', '#000000', '12px ËÎÌå');
+   if(i>0&&i<8) ht_text(this.ctx, c-10,y0, 30*(i-4)+'('+(i<=4?45*i:45*i-360)+')', '#000000', '12px å®‹ä½“');
   }
   this.ctx.stroke();
-  //´´½¨µØ±ê
+  //åˆ›å»ºåœ°æ ‡
   for(i=0;i<this.diming.length;i+=3){
    var J = this.diming[i]; if(J<0) J+=360;
    var W = this.diming[i+1];
    J = J/45, W = W/30+3;
    J = x0+dx*J-5;
    W = y0-dy*W-8;
-   ht_text(this.ctx,J,W, '¡¤'+this.diming[i+2], '#000000', '12px ËÎÌå' );
+   ht_text(this.ctx,J,W, 'Â·'+this.diming[i+2], '#000000', '12px å®‹ä½“' );
   }
  },
 
- draw1:function(sm,J,W,bei){ //µØÆ½×ø±êÖĞ»­ÈÕ¡¢ÔÂ¡£smÈÕ»òÔÂ,J¾­¶È,WÎ³¶È,beiÎªÕæÊ±,±íÊ¾×ø±êÍ¼ÖĞµÄ0¶ÈÎªÕı±±,·ñÔòÎªÕıÄÏ
-  //¾­Î³¶È×ªÎª¸ñÊı
+ draw1:function(sm,J,W,bei){ //åœ°å¹³åæ ‡ä¸­ç”»æ—¥ã€æœˆã€‚smæ—¥æˆ–æœˆ,Jç»åº¦,Wçº¬åº¦,beiä¸ºçœŸæ—¶,è¡¨ç¤ºåæ ‡å›¾ä¸­çš„0åº¦ä¸ºæ­£åŒ—,å¦åˆ™ä¸ºæ­£å—
+  //ç»çº¬åº¦è½¬ä¸ºæ ¼æ•°
   var col = sm=='sun' ? '#FF0000' : '#B0A070';
   if(bei) J = J - Math.PI;
   J = rad2rrad(J);
@@ -103,38 +103,38 @@ var tu1={
   J =J*180/Math.PI/30+4;
   ht_oval2(this.ctx,this.x0+J*this.dx, this.y0-W*this.dy, 4, col);
  },
- draw1b:function(sm,J,W,gst){ //Ê±½Ç×ø±êÖĞ»­ÈÕ¡¢ÔÂ¡£smÈÕ»òÔÂ,³à¾­,³àÎ³,ºãĞÇÊ±
-  //¾­Î³¶È×ªÎª¸ñÊı
+ draw1b:function(sm,J,W,gst){ //æ—¶è§’åæ ‡ä¸­ç”»æ—¥ã€æœˆã€‚smæ—¥æˆ–æœˆ,èµ¤ç»,èµ¤çº¬,æ’æ˜Ÿæ—¶
+  //ç»çº¬åº¦è½¬ä¸ºæ ¼æ•°
   var col = sm=='sun' ? '#FF0000' : '#B0A070';
   W = W*180/Math.PI/30+3;
   J = rad2mrad(J-gst)*180/Math.PI/45;
   ht_oval2(this.ctx,this.x0+J*this.dx, this.y0-W*this.dy, 4, col);
  },
- draw2a:function(J1,W1,J2,W2, mr,sr){ //»­ÈÕÊ³·Å´óÍ¼,×ªÈëÔÂ¡¢Ì«Ñô×ø±ê¼°ÊÓ°ë¾¶(Ç°ÕßÎªÔÂ),°ë¾¶µ¥Î»ÊÇ½ÇÃë¡£Î´×ö´óÆøÕÛÉäĞŞÕı¡£
+ draw2a:function(J1,W1,J2,W2, mr,sr){ //ç”»æ—¥é£Ÿæ”¾å¤§å›¾,è½¬å…¥æœˆã€å¤ªé˜³åæ ‡åŠè§†åŠå¾„(å‰è€…ä¸ºæœˆ),åŠå¾„å•ä½æ˜¯è§’ç§’ã€‚æœªåšå¤§æ°”æŠ˜å°„ä¿®æ­£ã€‚
   var dJ=-rad2rrad(J1-J2), dW=W1-W2, v=this.vs;
-  //Ä¬ÈÏÏòÓÒÎª¶«£¬ÔÂÁÁ¶«ĞĞËùÒÔÏòÓÒÔË¶¯£¬¾­¶ÈÈ¡·´£¬ÔÂÁÁÏò×óÔË¶¯(×ó±ß±äÎª¶«)
-  dJ *= Math.cos((W1+W2)/2)*rad, dW *= rad; //×ªÎªÆ½Ãæ
-  dJ = v/32*dJ/60,  dW = v/32*dW/60; //×ø±ê×ªÎªµãÊı
-  sr = v/32*sr/60,  mr = v/32*mr/60; //ÈÕÔÂÃæ´óĞ¡×ªÎªµãÊı
-  if(Math.abs(dJ)>3.5*this.dx || Math.abs(dW)>2.5*this.dy) return; //³ö½ç
-  //»­ÈÕÔÂ
+  //é»˜è®¤å‘å³ä¸ºä¸œï¼Œæœˆäº®ä¸œè¡Œæ‰€ä»¥å‘å³è¿åŠ¨ï¼Œç»åº¦å–åï¼Œæœˆäº®å‘å·¦è¿åŠ¨(å·¦è¾¹å˜ä¸ºä¸œ)
+  dJ *= Math.cos((W1+W2)/2)*rad, dW *= rad; //è½¬ä¸ºå¹³é¢
+  dJ = v/32*dJ/60,  dW = v/32*dW/60; //åæ ‡è½¬ä¸ºç‚¹æ•°
+  sr = v/32*sr/60,  mr = v/32*mr/60; //æ—¥æœˆé¢å¤§å°è½¬ä¸ºç‚¹æ•°
+  if(Math.abs(dJ)>3.5*this.dx || Math.abs(dW)>2.5*this.dy) return; //å‡ºç•Œ
+  //ç”»æ—¥æœˆ
   ht_oval2(this.ctx,this.vx,    this.vy,   sr, '#FF0000');
   ht_oval2(this.ctx,this.vx+dJ, this.vy-dW,mr, '#A0A000');
  },
- draw2b:function(J1,W1,J2,W2, mr,er,Er){ //»­ÔÂÊ³·Å´óÍ¼,×ªÈëÔÂ¡¢µØÓ°×ø±ê¼°ÊÓ°ë¾¶(Ç°ÕßÎªÔÂ),°ë¾¶µ¥Î»ÊÇ½ÇÃë¡£Î´×ö´óÆøÕÛÉäµÄĞŞÕı¡£
+ draw2b:function(J1,W1,J2,W2, mr,er,Er){ //ç”»æœˆé£Ÿæ”¾å¤§å›¾,è½¬å…¥æœˆã€åœ°å½±åæ ‡åŠè§†åŠå¾„(å‰è€…ä¸ºæœˆ),åŠå¾„å•ä½æ˜¯è§’ç§’ã€‚æœªåšå¤§æ°”æŠ˜å°„çš„ä¿®æ­£ã€‚
   var dJ=-rad2rrad(J1-J2), dW=W1-W2, v=this.vs/2;
-  dJ *= Math.cos((W1+W2)/2)*rad, dW *= rad; //×ªÎªÆ½Ãæ
-  dJ = v/32*dJ/60,   dW = v/32*dW/60;   //×ø±ê×ªÎªµãÊı
-  er = v/32*er/60, Er = v/32*Er/60, mr = v/32*mr/60; //ÈÕÔÂÃæ´óĞ¡×ªÎªµãÊı
-  if(Math.abs(dJ)>3.5*this.dx || Math.abs(dW)>2.5*this.dy) return; //³ö½ç
-  ht_oval2(this.ctx,this.vx+dJ, this.vy-dW,mr, '#A0A000');         //ÔÂÁÁ
-  ht_oval2(this.ctx,this.vx,    this.vy,   Er, 'rgba(0,0,0,0.2)'); //°ëÓ°
-  ht_oval2(this.ctx,this.vx,    this.vy,   er, 'rgba(0,0,0,0.4)'); //±¾Ó°
+  dJ *= Math.cos((W1+W2)/2)*rad, dW *= rad; //è½¬ä¸ºå¹³é¢
+  dJ = v/32*dJ/60,   dW = v/32*dW/60;   //åæ ‡è½¬ä¸ºç‚¹æ•°
+  er = v/32*er/60, Er = v/32*Er/60, mr = v/32*mr/60; //æ—¥æœˆé¢å¤§å°è½¬ä¸ºç‚¹æ•°
+  if(Math.abs(dJ)>3.5*this.dx || Math.abs(dW)>2.5*this.dy) return; //å‡ºç•Œ
+  ht_oval2(this.ctx,this.vx+dJ, this.vy-dW,mr, '#A0A000');         //æœˆäº®
+  ht_oval2(this.ctx,this.vx,    this.vy,   Er, 'rgba(0,0,0,0.2)'); //åŠå½±
+  ht_oval2(this.ctx,this.vx,    this.vy,   er, 'rgba(0,0,0,0.4)'); //æœ¬å½±
  },
- draw3:function(J,W,bl){ //»­³öÈÕÊ³ÖĞĞÄÏß£¬J,WÎªÄ³ÖĞĞÄµãµÄµØ±ê£¬bl±íÊ¾ÊÇ·ñ±£ÁôÂ·¾¶
+ draw3:function(J,W,bl){ //ç”»å‡ºæ—¥é£Ÿä¸­å¿ƒçº¿ï¼ŒJ,Wä¸ºæŸä¸­å¿ƒç‚¹çš„åœ°æ ‡ï¼Œblè¡¨ç¤ºæ˜¯å¦ä¿ç•™è·¯å¾„
   var i, ph = this.rsph;
-  if(!bl) ph.length = 0; //Çå³ıÂ·¾¶
-  if( Math.abs(J)<=Math.PI*2 || Math.abs(W)<=Math.PI ){ //±£´æÂ·¾¶
+  if(!bl) ph.length = 0; //æ¸…é™¤è·¯å¾„
+  if( Math.abs(J)<=Math.PI*2 || Math.abs(W)<=Math.PI ){ //ä¿å­˜è·¯å¾„
    J = rad2mrad(J)/Math.PI*180/45; W = W/Math.PI*180/30+3;
    J = this.x0+this.dx*J-3; W = this.y0-this.dy*W;
    ph[ph.length] = J, ph[ph.length] = W;
@@ -155,35 +155,35 @@ var tu1={
 
 var tu2={
  isInit:0, eR:140, x0:240, y0:210,
- init:ht_init, //³õÊ¼»¯
+ init:ht_init, //åˆå§‹åŒ–
  line1:function(as,hd){
   var i,a,js,xc,yc;
   var R=this.eR, R2=this.eR*1.2;
-  this.can.height = this.can.height; //Çå³ı»­²¼
-  ht_oval1(this.ctx,this.x0,this.y0,R,'#000000'); //»­µØÇòÔ²
-  //»­»Æ³àµÀÓëµØĞÄ¼«Öá
+  this.can.height = this.can.height; //æ¸…é™¤ç”»å¸ƒ
+  ht_oval1(this.ctx,this.x0,this.y0,R,'#000000'); //ç”»åœ°çƒåœ†
+  //ç”»é»„èµ¤é“ä¸åœ°å¿ƒæè½´
   ht_line(this.ctx,this.x0-R2, this.y0,    this.x0+R2,  this.y0,    '#000000');
   ht_line(this.ctx,this.x0,    this.y0+R2, this.x0,     this.y0-R2, '#000000');
 
-  for(i=0;i<as.length;i++){ //»­Ğ±Ïß
+  for(i=0;i<as.length;i++){ //ç”»æ–œçº¿
    a = as[i];
    xc=a.xc, yc=a.yc, k=a.k;
    if(a.d>1.6) continue;
-   if(hd){ //×ªÎª»ÆµÀ×ø±ê
+   if(hd){ //è½¬ä¸ºé»„é“åæ ‡
     var r = sqrt(xc*xc+yc*yc);
     var s = atan2(yc,xc)+a.ds, dk=tan(a.ds);
     xc = r*cos(s);
     yc = r*sin(s);
     k = (k+dk)/(1-k*dk);
-    ht_text(this.ctx,400,210,"±´»Æ½»Ïß", "#FF0000", '20px ËÎÌå');
+    ht_text(this.ctx,400,210,"è´é»„äº¤çº¿", "#FF0000", '20px å®‹ä½“');
    }else{
-    //ÔÚ³àµÀ±´Èû¶û×ø±êÖĞÏÔÊ¾±±¼«
+    //åœ¨èµ¤é“è´å¡å°”åæ ‡ä¸­æ˜¾ç¤ºåŒ—æ
     js = Math.PI/2-a.I[1];
     ht_oval2(this.ctx, this.x0, this.y0-R*cos(js), 3, js>0?'#00a0ff':'#000000');
-    ht_text(this.ctx,400,210,"±´³à½»Ïß", "#FF0000", '20px ËÎÌå');
+    ht_text(this.ctx,400,210,"è´èµ¤äº¤çº¿", "#FF0000", '20px å®‹ä½“');
    }
-   ht_text(this.ctx,10,30,"Ó°Öá-±´Èû¶û½»Ïß", "#FF0000", '16px ËÎÌå');
-   //»­ÏßĞ±Ïß
+   ht_text(this.ctx,10,30,"å½±è½´-è´å¡å°”äº¤çº¿", "#FF0000", '16px å®‹ä½“');
+   //ç”»çº¿æ–œçº¿
    ht_line(this.ctx, this.x0-R2,  this.y0-(k*(-1.2-xc)+yc)*R,
                      this.x0+R2,  this.y0-(k*( 1.2-xc)+yc)*R, '#000000');
   }
@@ -196,8 +196,8 @@ var tu2={
 
 var tu3={
  isInit:0, eR:250, x0:350, y0:260,
- init:ht_init, //³õÊ¼»¯º¯Êı
- lineArr:function(d,color){ //»­ÇúÏß
+ init:ht_init, //åˆå§‹åŒ–å‡½æ•°
+ lineArr:function(d,color){ //ç”»æ›²çº¿
    var c,x,y;
    d = touY.lineArr(d);
    this.ctx.beginPath();
@@ -212,71 +212,71 @@ var tu3={
    }
    this.ctx.stroke();
  },
- drawJWQ:function(n,m){ //»­¾­Î³È¦
-  var i,k, a=new Array(), N=96, pi=Math.PI; //N¾­Î³È¦ÃèµãµÄ¸öÊı
-  for(k=0;k<m;k++){ //»­Î³È¦
+ drawJWQ:function(n,m){ //ç”»ç»çº¬åœˆ
+  var i,k, a=new Array(), N=96, pi=Math.PI; //Nç»çº¬åœˆæç‚¹çš„ä¸ªæ•°
+  for(k=0;k<m;k++){ //ç”»çº¬åœˆ
    for(i=0,f=0;i<=N;i++) a[2*i] = i*pi2/N, a[2*i+1] = (k+1)*pi/(m+1)-pi_2;
    this.lineArr(a,'#E0E0E0');
   }
-  for(k=0;k<n;k++){ //»­¾­È¦
+  for(k=0;k<n;k++){ //ç”»ç»åœˆ
    for(i=0,f=0;i<=N;i++) a[2*i] = k*pi2/n, a[2*i+1] = i*pi/N-pi_2;
    this.lineArr(a,'#E0E0E0');
   }
  },
 
- lineNN:function(p1,n1,p2,n2, color){ //Á¬½Óp1ÖĞµÄn1µ½p2ÖĞµÄn2
+ lineNN:function(p1,n1,p2,n2, color){ //è¿æ¥p1ä¸­çš„n1åˆ°p2ä¸­çš„n2
   if(!p1.length||!p2.length) return;
   if(n1==-1) n1=p1.length-2;
   if(n2==-1) n2=p2.length-2;
-  this.lineArr( [ p1[n1],p1[n1+1],  p2[n2],p2[n2+1] ], color ); //p1Óëp2Á½ÏßÍ·²¿Á¬½Ó
+  this.lineArr( [ p1[n1],p1[n1+1],  p2[n2],p2[n2+1] ], color ); //p1ä¸p2ä¸¤çº¿å¤´éƒ¨è¿æ¥
  },
- draw:function(F, J0,W0, eR, jb, tylx){ //jb¾Ö²¿·Å´ó²ÎÊı
+ draw:function(F, J0,W0, eR, jb, tylx){ //jbå±€éƒ¨æ”¾å¤§å‚æ•°
   var col1 = '#FF6060', col2 = '#80F080', n;
   touY.setlx(tylx,J0,W0, jb);
   this.eR = eR;
   this.x0 = this.w*eR/250/2;
   this.y0 = this.h*eR/250/2;
-  this.can.width  = this.w*eR/250; //ÖØÖÃ»­²¼´óĞ¡,Çå³ı»­²¼
+  this.can.width  = this.w*eR/250; //é‡ç½®ç”»å¸ƒå¤§å°,æ¸…é™¤ç”»å¸ƒ
   this.can.height = this.h*eR/250;
 
 
-  this.lineArr(ditu1,'#808080'); //µØÍ¼shape
-  this.lineArr(ditu2,'#D0D0FF'); //µØÍ¼shape(¹ú½ç)
-  this.drawJWQ(24,11); //¾­Î³È¦
+  this.lineArr(ditu1,'#808080'); //åœ°å›¾shape
+  this.lineArr(ditu2,'#D0D0FF'); //åœ°å›¾shape(å›½ç•Œ)
+  this.drawJWQ(24,11); //ç»çº¬åœˆ
 
-  this.lineArr( F.p1, col1 ); //³õ¿÷¸´Ô²Ïß1£¬¶ş´Î·½³ÌµÚ1¸ù
-  this.lineArr( F.p2, col1 ); //³õ¿÷¸´Ô²Ïß1£¬¶ş´Î·½³ÌµÚ2¸ù
-  this.lineArr( F.p3, col1 ); //³õ¿÷¸´Ô²Ïß2£¬¶ş´Î·½³ÌµÚ1¸ù
-  this.lineArr( F.p4, col1 ); //³õ¿÷¸´Ô²Ïß2£¬¶ş´Î·½³ÌµÚ2¸ù
+  this.lineArr( F.p1, col1 ); //åˆäºå¤åœ†çº¿1ï¼ŒäºŒæ¬¡æ–¹ç¨‹ç¬¬1æ ¹
+  this.lineArr( F.p2, col1 ); //åˆäºå¤åœ†çº¿1ï¼ŒäºŒæ¬¡æ–¹ç¨‹ç¬¬2æ ¹
+  this.lineArr( F.p3, col1 ); //åˆäºå¤åœ†çº¿2ï¼ŒäºŒæ¬¡æ–¹ç¨‹ç¬¬1æ ¹
+  this.lineArr( F.p4, col1 ); //åˆäºå¤åœ†çº¿2ï¼ŒäºŒæ¬¡æ–¹ç¨‹ç¬¬2æ ¹
 
   n = F.p1.length-2;
-  this.lineNN( F.p1,0, F.p2,0,  col1 ); //p1Óëp2Á½ÏßÍ·²¿Á¬½Ó,Ê³½çÏß1
-  this.lineNN( F.p1,n, F.p2,n,  col1 ); //p1Óëp2Á½ÏßÎ²²¿Á¬½Ó,Ê³½çÏß1
+  this.lineNN( F.p1,0, F.p2,0,  col1 ); //p1ä¸p2ä¸¤çº¿å¤´éƒ¨è¿æ¥,é£Ÿç•Œçº¿1
+  this.lineNN( F.p1,n, F.p2,n,  col1 ); //p1ä¸p2ä¸¤çº¿å°¾éƒ¨è¿æ¥,é£Ÿç•Œçº¿1
 
   n = F.p3.length-2;
-  this.lineNN( F.p3,0, F.p4,0,  col1 ); //p3Óëp4Á½ÏßÍ·²¿Á¬½Ó,Ê³½çÏß1
-  this.lineNN( F.p3,n, F.p4,n,  col1 ); //p3Óëp4Á½ÏßÎ²²¿Á¬½Ó,Ê³½çÏß1
+  this.lineNN( F.p3,0, F.p4,0,  col1 ); //p3ä¸p4ä¸¤çº¿å¤´éƒ¨è¿æ¥,é£Ÿç•Œçº¿1
+  this.lineNN( F.p3,n, F.p4,n,  col1 ); //p3ä¸p4ä¸¤çº¿å°¾éƒ¨è¿æ¥,é£Ÿç•Œçº¿1
 
-  this.lineArr( F.q1, col1 ); //ÈÕ³öÈÕÃ»Ê³ÉõÏßÏß1,µÚ1¸ù,Ê³½çÏß1
-  this.lineArr( F.q2, col1 ); //ÈÕ³öÈÕÃ»Ê³ÉõÏßÏß1,µÚ2¸ù,Ê³½çÏß1
-  this.lineArr( F.q3, col1 ); //ÈÕ³öÈÕÃ»Ê³ÉõÏßÏß2,µÚ1¸ù,Ê³½çÏß1
-  this.lineArr( F.q4, col1 ); //ÈÕ³öÈÕÃ»Ê³ÉõÏßÏß2,µÚ2¸ù,Ê³½çÏß1
+  this.lineArr( F.q1, col1 ); //æ—¥å‡ºæ—¥æ²¡é£Ÿç”šçº¿çº¿1,ç¬¬1æ ¹,é£Ÿç•Œçº¿1
+  this.lineArr( F.q2, col1 ); //æ—¥å‡ºæ—¥æ²¡é£Ÿç”šçº¿çº¿1,ç¬¬2æ ¹,é£Ÿç•Œçº¿1
+  this.lineArr( F.q3, col1 ); //æ—¥å‡ºæ—¥æ²¡é£Ÿç”šçº¿çº¿2,ç¬¬1æ ¹,é£Ÿç•Œçº¿1
+  this.lineArr( F.q4, col1 ); //æ—¥å‡ºæ—¥æ²¡é£Ÿç”šçº¿çº¿2,ç¬¬2æ ¹,é£Ÿç•Œçº¿1
 
-  this.lineArr( F.L0, col1 ); //ÖĞĞÄÏß,Ê³½çÏß1
-  this.lineArr( F.L1, col1 ); //°ëÓ°±±½ç,Ê³½çÏß1
-  this.lineArr( F.L2, col1 ); //°ëÓ°ÄÏ½ç,Ê³½çÏß1
-  this.lineArr( F.L3, col1 ); //±¾Ó°±±½ç(»òÎ±±¾Ó°ÄÏ½ç),Ê³½çÏß1
-  this.lineArr( F.L4, col1 ); //±¾Ó°ÄÏ½ç(»òÎ±±¾Ó°±±½ç),Ê³½çÏß1
-  this.lineArr( F.L5, col2 ); //0.5°ëÓ°±±½ç,Ê³½çÏß2
-  this.lineArr( F.L6, col2 ); //0.5°ëÓ°ÄÏ½ç,Ê³½çÏß2
+  this.lineArr( F.L0, col1 ); //ä¸­å¿ƒçº¿,é£Ÿç•Œçº¿1
+  this.lineArr( F.L1, col1 ); //åŠå½±åŒ—ç•Œ,é£Ÿç•Œçº¿1
+  this.lineArr( F.L2, col1 ); //åŠå½±å—ç•Œ,é£Ÿç•Œçº¿1
+  this.lineArr( F.L3, col1 ); //æœ¬å½±åŒ—ç•Œ(æˆ–ä¼ªæœ¬å½±å—ç•Œ),é£Ÿç•Œçº¿1
+  this.lineArr( F.L4, col1 ); //æœ¬å½±å—ç•Œ(æˆ–ä¼ªæœ¬å½±åŒ—ç•Œ),é£Ÿç•Œçº¿1
+  this.lineArr( F.L5, col2 ); //0.5åŠå½±åŒ—ç•Œ,é£Ÿç•Œçº¿2
+  this.lineArr( F.L6, col2 ); //0.5åŠå½±å—ç•Œ,é£Ÿç•Œçº¿2
 
-  //»­³öµØÇòÔ²µÄ
+  //ç”»å‡ºåœ°çƒåœ†çš„
   if( !(tylx==3||tylx==4||tylx==5||tylx==6 || jb[2]<1||jb[3]<1) )
     ht_oval1(this.ctx,this.x0,this.y0,this.eR, '#000000');
  },
  draw2:function(F){
-   this.lineArr( F.p3, '#8080F0' ); //³¿»èÈ¦
-   this.lineArr( F.p1, '#000000' ); //±¾Ó°
-   this.lineArr( F.p2, '#000000' ); //°ëÓ°
+   this.lineArr( F.p3, '#8080F0' ); //æ™¨æ˜åœˆ
+   this.lineArr( F.p1, '#000000' ); //æœ¬å½±
+   this.lineArr( F.p2, '#000000' ); //åŠå½±
  }
 };

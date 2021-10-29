@@ -2,57 +2,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=gb2312"/> 
-<title>ÈÕÊ³</title>
+<title>æ—¥é£Ÿ</title>
 <script src="http://ditu.google.cn/maps?file=api&amp;v=2&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA&hl=zh-CN" type="text/javascript" charset='utf-8'></script>
 
-<script language=javascript src=tools.js></script><!--¹¤¾ßº¯Êı-->
-<script language=javascript src=eph0.js></script> <!--ÌìÎÄ³£ÊıµÈ-->
-<script language=javascript src=eph.js></script>  <!--ĞÇÀúÄ£¿é-->
+<script language=javascript src=tools.js></script><!--å·¥å…·å‡½æ•°-->
+<script language=javascript src=eph0.js></script> <!--å¤©æ–‡å¸¸æ•°ç­‰-->
+<script language=javascript src=eph.js></script>  <!--æ˜Ÿå†æ¨¡å—-->
 <script type="text/javascript">
 var map;
-var PL=new Array();  //ÕÛÏß¶ÔÏó(¶àÌõÕÛÏß)
+var PL=new Array();  //æŠ˜çº¿å¯¹è±¡(å¤šæ¡æŠ˜çº¿)
 function initialize() {
  if (GBrowserIsCompatible()) {
    map = new GMap2(document.getElementById("map_canvas"),{draggableCursor:"default"});
-   map.setCenter(new GLatLng(39.917,116.397), 1);  //ÉèÖÃµØÍ¼µÄÖĞĞÄ
-   map.addControl(new GSmallMapControl()); //¼ÓÈë·ÅËõ¿ØÖÆÆ÷
-   GEvent.addListener(map, "click", function(lay,JW) { //´´½¨µØÍ¼µÄµ¥»÷ÊÂ¼ş
+   map.setCenter(new GLatLng(39.917,116.397), 1);  //è®¾ç½®åœ°å›¾çš„ä¸­å¿ƒ
+   map.addControl(new GSmallMapControl()); //åŠ å…¥æ”¾ç¼©æ§åˆ¶å™¨
+   GEvent.addListener(map, "click", function(lay,JW) { //åˆ›å»ºåœ°å›¾çš„å•å‡»äº‹ä»¶
      if(!JW) return;;
-     Ca.innerHTML='¾­¶ÈÎ³¶È£º'+JW + ' µ±Ç°ÖĞĞÄ£º' + map.getCenter() + ' ±ÈÀıµÈ¼¶£º' + map.getZoom()+' ';
+     Ca.innerHTML='ç»åº¦çº¬åº¦ï¼š'+JW + ' å½“å‰ä¸­å¿ƒï¼š' + map.getCenter() + ' æ¯”ä¾‹ç­‰çº§ï¼š' + map.getZoom()+' ';
    });
-   GEvent.addListener(map, "zoomend", function(v0,v)   {Ca.innerHTML='·ÅËõ±ÈÀıµÈ¼¶£º'+v; }); //´´½¨µØÍ¼µÄ·ÅËõÊÂ¼ş
+   GEvent.addListener(map, "zoomend", function(v0,v)   {Ca.innerHTML='æ”¾ç¼©æ¯”ä¾‹ç­‰çº§ï¼š'+v; }); //åˆ›å»ºåœ°å›¾çš„æ”¾ç¼©äº‹ä»¶
  }
 }
 
-function encodePL(v){ //ÕÛÏßÊı¾İbase64±àÂë
+function encodePL(v){ //æŠ˜çº¿æ•°æ®base64ç¼–ç 
   var s='';
   if(v<0) v=~(v<<1); else v<<=1;
-  while(v>=0x20){ //0x20ÊÇascIIÂëÖĞ¿É¼û×Ö·ûµÄ¿ªÊ¼   
+  while(v>=0x20){ //0x20æ˜¯ascIIç ä¸­å¯è§å­—ç¬¦çš„å¼€å§‹   
    s += String.fromCharCode( (v&0x1f)+32+63);
-   v >>= 5; //¶ş½øÖÆÓÒÒÆ5Î»
+   v >>= 5; //äºŒè¿›åˆ¶å³ç§»5ä½
   }     
   return s + String.fromCharCode(v+63);
 }  
-function createPL(L,k,co){ //´´½¨ÕÛÏß
-  if(PL[k]) map.removeOverlay(PL[k]); //ÒÆ³ıÕÛÏß
+function createPL(L,k,co){ //åˆ›å»ºæŠ˜çº¿
+  if(PL[k]) map.removeOverlay(PL[k]); //ç§»é™¤æŠ˜çº¿
   if(!L.length) return;
   var i, a=new Array();
-  for(i=0;i<L.length;i++) //±£Áô5¸öĞ¡Êı,¾­¶ÈÓëÎ³¶È½»»»
+  for(i=0;i<L.length;i++) //ä¿ç•™5ä¸ªå°æ•°,ç»åº¦ä¸çº¬åº¦äº¤æ¢
     a[i]=Math.round(L[i]*radd*100000);
-  var s=encodePL(a[1]) + encodePL(a[0]); //±àÂë
+  var s=encodePL(a[1]) + encodePL(a[0]); //ç¼–ç 
   for(i=2; i<a.length; i+=2)
     s += encodePL(a[i+1]-a[i-1]) + encodePL(a[i]-a[i-2]);
-  PL[k] = new GPolyline.fromEncoded({ color:co, weight:1, points:s, levels:"BBB", zoomFactor: 32, numLevels: 4 }); //´´½¨ÕÛÏß
-  map.addOverlay(PL[k]); //¼ÓÈëÕÛÏß¶ÔÏó
+  PL[k] = new GPolyline.fromEncoded({ color:co, weight:1, points:s, levels:"BBB", zoomFactor: 32, numLevels: 4 }); //åˆ›å»ºæŠ˜çº¿
+  map.addOverlay(PL[k]); //åŠ å…¥æŠ˜çº¿å¯¹è±¡
 }
 
 </script>
 </head>
 
 <body onload="initialize()" onunload="GUnload()">
-±¾³ÌĞòµ÷ÓÃ¡¶ÊÙĞÇÌìÎÄÀú¡·ÄÚºË¼ÆËãÈÕÊ³½çÏß£¬²¢ÀûÓÃgoogleµØÍ¼ÏÔÊ¾¡£<br>
-¹«Ôª<input id=C1_y type=text size=4 value=2009>Äê<input id=C1_m type=text size=2 value=7 maxleng=2>ÔÂ<input id=C1_d type=text size=2 value=22 maxleng=2>ÈÕ
-<input type=button onclick="C1_show(1)" value="È·¶¨">
+æœ¬ç¨‹åºè°ƒç”¨ã€Šå¯¿æ˜Ÿå¤©æ–‡å†ã€‹å†…æ ¸è®¡ç®—æ—¥é£Ÿç•Œçº¿ï¼Œå¹¶åˆ©ç”¨googleåœ°å›¾æ˜¾ç¤ºã€‚<br>
+å…¬å…ƒ<input id=C1_y type=text size=4 value=2009>å¹´<input id=C1_m type=text size=2 value=7 maxleng=2>æœˆ<input id=C1_d type=text size=2 value=22 maxleng=2>æ—¥
+<input type=button onclick="C1_show(1)" value="ç¡®å®š">
 <div id=Ca></div>
 <div id="map_canvas" style="width: 800px; height: 600px"></div>
 
@@ -60,7 +60,7 @@ function createPL(L,k,co){ //´´½¨ÕÛÏß
 function C1_show(xm){
  var jd = JD.JD( year2Ayear(C1_y.value), C1_m.value-0, (C1_d.value-0) ) - J2000;
  rsGS.init(jd,7);
- var bu = rsGS.jieX(jd,0); //È¡½çÏß
+ var bu = rsGS.jieX(jd,0); //å–ç•Œçº¿
  createPL(bu.L0,0,'red');
  createPL(bu.L4,1,'green');
  createPL(bu.L3,2,'green');
