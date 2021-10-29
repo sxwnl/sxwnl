@@ -1,5 +1,5 @@
 # sxwnl
-寿星万年历5.08(测试版); 作者: 许剑伟; 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html  
+寿星万年历5.09; 作者: 许剑伟; 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html  
 最后更新日期: 2018-12-15  
 本页面预览地址: https://qaiu.github.io/sxwnl  
 因为原项目使用GBK编码导致在GitHub Page上预览乱码, 故项目编码统一改为UTF-8  
