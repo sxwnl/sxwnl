@@ -197,7 +197,7 @@ if( fexists(ph+fs) ){
   }
 }
 
-s2='<!-- saved from url=(0021)http://www.sxwnl.com/ -->\r\n'+s2;
+// s2='<!-- saved from url=(0021)http://www.sxwnl.com/ -->\r\n'+s2;
 s2=s2.replace(/'readme\.htm/g,'\'javascript:showHelp(1);');
 s2=s2.replace(/exphelp1/g, rfile("exphelp1.htm").replace(/\r\n/g,'') );
 wfile(ph+fs,s2);
