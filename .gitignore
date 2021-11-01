@@ -1,3 +1,6 @@
 .idea
 out
 *.iml
+/index.htm
+/indexmp.htm
+
