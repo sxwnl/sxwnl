@@ -1,7 +1,7 @@
 # sxwnl
 寿星万年历5.10; 作者: 许剑伟; 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html  
 最后更新日期: 2018-11-15  
-本页面预览地址: https://qaiu.github.io/sxwnl  
+本页面预览地址: https://sxwnl.github.io/  
 因为原项目使用GBK编码导致在GitHub Page上预览乱码, 故项目编码统一改为UTF-8
 
 说明文档: https://sxwnl.github.io/src/readme.htm
