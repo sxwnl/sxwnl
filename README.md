@@ -1,8 +1,9 @@
 # sxwnl  
+
 2022-08-10 更新说明:
 发现github会自动将windows CRLF保存为Unix的LF, 导致clone后无法执行convertMarge和hebin的bat脚本, 因此通过修改配置的方式将所有源文件重新保存为CRLF换行;
-参考: https://github.com/cssmagic/blog/issues/22
-===
+参考: https://github.com/cssmagic/blog/issues/22  
+===  
 寿星万年历5.10; 作者: 许剑伟; 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html  
 最后更新日期: 2018-11-15  
 本页面预览地址: https://sxwnl.github.io/  
