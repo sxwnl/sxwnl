@@ -3,6 +3,7 @@
 2022-08-10 更新说明:
 发现github会自动将windows CRLF保存为Unix的LF, 导致clone后无法执行convertMarge和hebin的bat脚本, 因此通过修改配置的方式将所有源文件重新保存为CRLF换行;
 参考: https://github.com/cssmagic/blog/issues/22  
+> 注意: 本项目打包合并仅限于Windows，其他操作系统可以直接运行源码
 
 寿星万年历5.10; 作者: 许剑伟; 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html  
 最后更新日期: 2018-11-15  
