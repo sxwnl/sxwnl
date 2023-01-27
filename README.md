@@ -16,7 +16,8 @@
 
 ## 版权/来源和其他说明
 寿星天文历5.10 (注意截止到今天--2022/08/25--5.10从未正式发布, 起码农历论坛里没有, 有另一个预览网站: [有趣天文奇观-寿星天文历](https://interesting-sky.china-vo.org/sxwnl.html), 这个版本呢是在CSDN上发现的, 经过对比发现和5.09差异不大, 只有2个公式的改动);  
-作者: 许剑伟; 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html  
+作者: 许剑伟; 
+更新地址 ~~http://bbs.nongli.net/dispbbs_2_14995.html~~ (因为农历论坛被广告刷屏，导致该贴被误删)  
 最后更新日期: 2018-11-15  
 
 说明文档: https://sxwnl.github.io/src/readme.htm  
