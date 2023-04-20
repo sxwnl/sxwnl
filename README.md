@@ -63,9 +63,10 @@ Post By：2020/4/25 18:37:00
   this.sun_j = sunShengJ(jd-dt_T(jd)+L/pi2,L,fa, 1) +dt_T(jd); //日没,统一用力学时
 ```
 
-作者: 许剑伟;
-邮箱: xunmeng04#163.com (#->@)
-更新地址 http://bbs.nongli.net/dispbbs_2_14995.html 
+
+作者: 许剑伟  
+邮箱: xunmeng04#163.com (#->@)  
+更新地址 http://bbs.nongli.net/dispbbs_2_14995.html   
 最后更新日期: 2018-11-15  
 
 说明文档: https://sxwnl.github.io/src/readme.htm  
