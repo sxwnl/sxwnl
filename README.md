@@ -16,7 +16,8 @@
 
 ## 版权/来源和其他说明
 注意: 截止到2022/08/25从未正式发布即[农历论坛](http://bbs.nongli.net/dispbbs_2_14995.html)里未发布, 有另一个预览网站: [有趣天文奇观-寿星天文历](https://interesting-sky.china-vo.org/sxwnl.html, 这个版本是在CSDN上发现的, 经过对比发现和5.09差异不大, 只有2个公式的改动);  
-作者: 许剑伟; 
+作者: 许剑伟;
+邮箱: xunmeng04#163.com (#->@)
 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html 
 最后更新日期: 2018-11-15  
 
