@@ -15,8 +15,8 @@
 本页面预览地址: https://sxwnl.github.io/  
 
 ## 版权/来源和其他说明
-注意: 截止到2022/08/25从未正式发布即[农历论坛](http://bbs.nongli.net/dispbbs_2_14995.html)里未发布, 有另一个预览网站: [有趣天文奇观-寿星天文历](https://interesting-sky.china-vo.org/sxwnl.html)
-这个版本是在CSDN上发现的, 经过对比发现和5.09差异不大, 只有2个公式的改动, 引用农历论坛网友解味石头的回帖;  
+注意: 许老师只更新到了5.09版本，5.10版本截止到目前从未正式发布即[农历论坛](http://bbs.nongli.net/dispbbs_2_14995.html)里未发布, 另一个预览网站: [有趣天文奇观-寿星天文历](https://interesting-sky.china-vo.org/sxwnl.html) ；
+该版本是在CSDN上发现的, 经过对比发现和5.09差异不大, 只有2个公式的改动, 引用农历论坛网友解味石头的回帖;  
 ```
 解味石头
 Post By：2020/4/25 18:37:00
@@ -67,7 +67,7 @@ Post By：2020/4/25 18:37:00
 作者: 许剑伟  
 邮箱: xunmeng04#163.com (#->@)  
 更新地址 http://bbs.nongli.net/dispbbs_2_14995.html   
-最后更新日期: 2018-11-15  
+最后更新日期: 2018-11-16  
 
 说明文档: https://sxwnl.github.io/src/readme.htm  
 关于版权: https://sxwnl.github.io/src/sm1.htm#copyright
