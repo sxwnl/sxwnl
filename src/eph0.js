@@ -148,11 +148,17 @@ function rad2rrad(v){//对超过-PI到PI的角度转为-PI到PI
   if(v>Math.PI) return v-2*Math.PI;
   return v;
 }
-function mod2(a,b){ //临界余数(a与最近的整倍数b相差的距离)
-  var c=a/b;
-  c -= Math.floor(c);
-  if(c>0.5) c-=1;
-  return c*b;
+// function mod2(a,b){ //临界余数(a与最近的整倍数b相差的距离)
+//   var c=a/b;
+//   c -= Math.floor(c);
+//   if(c>0.5) c-=1;
+//   return c*b;
+// }
+//#4 下面是hetai9z优化后的函数,简洁快速:
+function mod2(a, b) { //临界余数(a与最近的整倍数b相差的距离)
+  let c = (a + b) % b
+  if(c > b/2.0) c -= b
+  return c;
 }
 
 function llr2xyz(JW){ //球面转直角坐标
