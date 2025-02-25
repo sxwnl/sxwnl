@@ -156,8 +156,8 @@ function rad2rrad(v){//对超过-PI到PI的角度转为-PI到PI
 // }
 //#4 下面是hetai9z优化后的函数,简洁快速:
 function mod2(a, b) { //临界余数(a与最近的整倍数b相差的距离)
-  var c = (a + b) % b
-  if(c > b/2.0) c -= b
+  var c = (a + b) % b;
+  if(c > b/2.0) c -= b;
   return c;
 }
 
