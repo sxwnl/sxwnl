@@ -43,7 +43,7 @@
   </td></tr>
 
   <tr><td width="100%" bgcolor="#E0E0FF">
-  <!--软件版本--><span style='font-family:楷体_GB2312,serif;font-size:16px;color:#FF0000;font-weight:bold'>寿星</span><span style='font-size:12px;font-weight:bold'><i>天文历(V5.10)</i></span>
+  <!--软件版本--><span style='font-family:楷体_GB2312,serif;font-size:16px;color:#FF0000;font-weight:bold'>寿星</span><span style='font-size:12px;font-weight:bold'><i>天文历(V5.10.1)</i></span>
   <!--经纬选择--><select id=Sel1 onchange="change(0)" style="width:80px"></select> <select id=Sel2 onchange="change2()"></select>
   <!--经度纬度--><span id=Cal_zdzb></span>
   </td></tr>
@@ -53,7 +53,7 @@
   <input type=button onclick="showPage(2)" value="年历">
   <input type=button onclick="showPage(3)" value="日月食"> <input type=button onclick="showPage(4)" value="地方食">
   <input type=button onclick="showPage(5)" value="星历">
-  <a href='javascript:showPage(6)'>天象1</a>
+  <a href='javascript:showPage(6)'>天象</a>
   <a href='javascript:showPage(7)'>恒星</a>
   <a href='javascript:showPage(8)'>气朔</a>
   <a href='javascript:showPage(9)'>升降</a>
@@ -1357,10 +1357,14 @@ function getNianLiN(){ //dy起始年份偏移数
 时钟1秒定时
 **********************/
 function tick() { //即时坐标计算
-  var now = new Date();
+  const now = new Date();
+  const currentTime = now.getTime(); // 当前时间的毫秒级时间戳
+  const nextSecond = Math.floor(currentTime / 1000 + 1) * 1000; // 下一个整秒的时间戳
+  const delay = nextSecond - currentTime; // 计算延迟时间
+
   show_clock(now);
   zb_calc();
-  window.setTimeout("tick()", 1000);
+  window.setTimeout(tick, delay);
 }
 tick(); //触发时钟
 

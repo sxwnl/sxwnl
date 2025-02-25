@@ -7,6 +7,10 @@
 >　　本软件可以精确计算日月坐标、日月食、日月升降等。参见[说明文档](https://sxwnl.github.io/src/sm1.htm)。  
 
 ## 更新说明
+2025-02-25: 
+  - 更新2018之后的△T参数
+  - 各种查询的输入日期默认当前日期
+  - 动态时钟误差修正和系统时间保持绝对的一致
 2022-08-10:  
 发现github会自动将windows CRLF保存为Unix的LF, 导致clone后无法执行convertMarge和hebin的bat脚本, 因此通过修改配置的方式将所有源文件重新保存为CRLF换行;
 参考: https://github.com/cssmagic/blog/issues/22  
