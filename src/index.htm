@@ -1357,10 +1357,10 @@ function getNianLiN(){ //dy起始年份偏移数
 时钟1秒定时
 **********************/
 function tick() { //即时坐标计算
-  const now = new Date();
-  const currentTime = now.getTime(); // 当前时间的毫秒级时间戳
-  const nextSecond = Math.floor(currentTime / 1000 + 1) * 1000; // 下一个整秒的时间戳
-  const delay = nextSecond - currentTime; // 计算延迟时间
+  var now = new Date();
+  var currentTime = now.getTime(); // 当前时间的毫秒级时间戳
+  var nextSecond = Math.floor(currentTime / 1000 + 1) * 1000; // 下一个整秒的时间戳
+  var delay = nextSecond - currentTime; // 计算延迟时间
 
   show_clock(now);
   zb_calc();
