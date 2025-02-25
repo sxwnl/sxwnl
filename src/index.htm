@@ -53,7 +53,7 @@
   <input type=button onclick="showPage(2)" value="年历">
   <input type=button onclick="showPage(3)" value="日月食"> <input type=button onclick="showPage(4)" value="地方食">
   <input type=button onclick="showPage(5)" value="星历">
-  <a href='javascript:showPage(6)'>天象</a>
+  <a href='javascript:showPage(6)'>天象1</a>
   <a href='javascript:showPage(7)'>恒星</a>
   <a href='javascript:showPage(8)'>气朔</a>
   <a href='javascript:showPage(9)'>升降</a>
@@ -419,7 +419,7 @@ UTC/TD<input id=Cf_ut type=checkbox checked>
 </td></tr>
 
 <!--版权区-->
-<tr><td class=dTop2 colspan=2 align=center> <font color=red> 邮箱 xunmeng04@163.com 许剑伟(福建莆田第十中学)保留版权 &copy; 2008-2009</font></td></tr>
+<tr><td class=dTop2 colspan=2 align=center> <font color=red> 邮箱 xunmeng04#163.com 许剑伟(福建莆田第十中学)保留版权 &copy; 2008-2009</font></td></tr>
 
 </table>
 
@@ -430,6 +430,72 @@ filter: shadow(#333333,135);display:none">
 </div>
 
 <script language=javascript>
+
+
+var today = new Date();
+var currentYear = today.getFullYear();
+var currentMonth = today.getMonth() + 1;
+var currentDay = today.getDate();
+
+window.onload = function() {
+  
+    var currentHours = today.getHours();
+    var currentMinutes = today.getMinutes();
+    var currentSeconds = today.getSeconds();
+    // 确保月份和日期是两位数格式
+    currentMonth = currentMonth < 10 ? '0' + currentMonth : currentMonth;
+    currentDay = currentDay < 10 ? '0' + currentDay : currentDay;
+    currentHours = currentHours < 10 ? '0' + currentHours : currentHours;
+    currentMinutes = currentMinutes < 10 ? '0' + currentMinutes : currentMinutes;
+    currentSeconds = currentSeconds < 10 ? '0' + currentSeconds : currentSeconds;
+
+    // 设置输入框的值
+    document.getElementById("Cb_y").value = currentYear;
+    document.getElementById("Cb_m").value = currentMonth;
+    document.getElementById("Cb_d").value = currentDay;
+    document.getElementById("Cb_t").value = currentHours + ":" + currentMinutes + ":" + currentSeconds;
+
+    document.getElementById("Cc_y").value = currentYear;
+    document.getElementById("Cc_m").value = currentMonth;
+    document.getElementById("Cc_d").value = currentDay;
+
+    document.getElementById("Cd_y").value = currentYear;
+    document.getElementById("Cd_m").value = currentMonth;
+    document.getElementById("Cd_d").value = currentDay;
+    document.getElementById("Cd_t").value = currentHours + ":" + currentMinutes + ":" + currentSeconds;
+
+    document.getElementById("Ce_y").value = currentYear;
+    document.getElementById("Ce_m").value = currentMonth;
+    document.getElementById("Ce_d").value = currentDay;
+
+    document.getElementById("Cf_y").value = currentYear;
+    document.getElementById("Cf_m").value = currentMonth;
+    document.getElementById("Cf_d").value = currentDay;
+    document.getElementById("Cf_t").value = currentHours + ":" + currentMinutes + ":" + currentSeconds;
+
+    document.getElementById("Cp8_y").value = currentYear;
+
+    document.getElementById("Cp9_y").value = currentYear;
+    document.getElementById("Cp9_m").value = currentMonth;
+    document.getElementById("Cp9_d").value = currentDay;
+
+    document.getElementById("Cp10_y").value = currentYear;
+    document.getElementById("Cp10_m").value = currentMonth;
+
+    document.getElementById("GJ1_y").value = currentYear;
+    document.getElementById("GJ1_m").value = currentMonth;
+    document.getElementById("GJ1_d").value = currentDay;
+    document.getElementById("GJ1_t").value = currentHours + ":" + currentMinutes + ":" + currentSeconds;
+
+    document.getElementById("GJ1_y2").value = currentYear;
+    document.getElementById("GJ1_m2").value = currentMonth;
+    document.getElementById("GJ1_d2").value = currentDay;
+    document.getElementById("GJ1_t2").value = currentHours + ":" + currentMinutes + ":" + currentSeconds;
+
+    // 设置年份输入框的值
+    document.getElementById("Cp2_y").value = currentYear;
+
+}
 
 var lun = new Lunar(); //月历全局对象
 var curJD; //现在日期
