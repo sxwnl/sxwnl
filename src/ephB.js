@@ -409,7 +409,7 @@ function hxCalc(t, F, Q, lx, L, fa){ //多颗同时计算,t儒略世纪TD,只算
     var sj = rad2rrad(gst + L - z[0]); //得到此刻天体时角
     z[0] += Math.PI/2 - gst - L;       //转到相对于地平赤道分点的赤道坐标
     z = llrConv( z, Math.PI/2-fa );    //恒星地平坐标
-    z[0] = rad2mrad( Math.PI/2-z[0] ); //方位角,高度角
+    z[0] = rad2mrad( -Math.PI/2-z[0] ); //方位角,高度角
     if(z[1]>0) z[1] += MQC(z[1]);      //大气折射修正
    }
   }

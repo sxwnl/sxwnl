@@ -328,7 +328,7 @@ function xingX(xt,jd,L,fa){ //行星计算,jd力学时
 
  z[0] += Math.PI/2-gst-L;  //修正了视差的赤道坐标
  z = llrConv( z, Math.PI/2-fa ); //转到时角坐标转到地平坐标
- z[0] = rad2mrad( Math.PI/2-z[0] );
+ z[0] = rad2mrad( -Math.PI/2-z[0] );
 
  if(z[1]>0) z[1] += MQC(z[1]); //大气折射修正
  s += '方位角 ' +rad2str(z[0],0) +' 高度角 ' +rad2str(z[1],0)+'\r\n';
@@ -471,7 +471,7 @@ var msc={
 
   //月亮地平坐标
   z = llrConv (z, Math.PI/2-fa );    //转到地平坐标(只改经纬度)
-  z[0] = rad2mrad( Math.PI/2-z[0] );
+  z[0] = rad2mrad( -Math.PI/2-z[0] );
   this.mDJ = z[0]; this.mDW = z[1]; //方位角,高度角
   if(z[1]>0) z[1] += MQC(z[1]); //大气折射修正
   this.mPJ = z[0]; this.mPW = z[1]; //方位角,高度角
@@ -500,7 +500,7 @@ var msc={
 
   //太阳地平坐标
   z = llrConv( z, Math.PI/2-fa );
-  z[0] = rad2mrad( Math.PI/2-z[0] );
+  z[0] = rad2mrad( -Math.PI/2-z[0] );
   //z[1] -= 8.794/rad/z[2]*Math.cos(z[1]); //直接在地平坐标中视差修正(这里把地球看为球形,精度比parallax()稍差一些)
   this.sDJ = z[0]; this.sDW = z[1]; //方位角,高度角
 
