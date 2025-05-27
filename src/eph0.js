@@ -188,7 +188,7 @@ function llrConv(JW,E){ //球面坐标旋转
 function CD2DP(z,L,fa,gst){ //赤道坐标转为地平坐标
   var a=new Array(z[0]+Math.PI/2-gst-L, z[1], z[2]);  //转到相对于地平赤道分点的赤道坐标
   a = llrConv( a, Math.PI/2-fa );
-  a[0] = rad2mrad( Math.PI/2-a[0] );
+  a[0] = rad2mrad( -Math.PI/2-a[0] );
   return a;
 }
 function j1_j2(J1,W1,J2,W2){ //求角度差
