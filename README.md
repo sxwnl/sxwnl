@@ -1,8 +1,6 @@
 # sxwnl 寿星天文历(万年历) 5.10 原作者: 许剑伟
 
-## 其他移植版本
-  C++版：https://github.com/sxwnl/sxwnl-cpp  
-  3D版演示版: https://github.com/sxwnl/sxwnl-cpp-3d
+推荐天文历法3D版演示版: https://github.com/sxwnl/sxwnl-cpp-3d
 
 > 注意: 本项目打包合并仅限于Windows，其他操作系统可以直接浏览器打开
 
